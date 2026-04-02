@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Music Player</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Dynamic Background Element -->
+  <div class="background-gradient"></div>
+
+  <div class="app-container">
+    <header class="app-header glass-effect">
+      <div class="logo">
+        <span class="material-symbols-rounded logo-icon">graphic_eq</span>
+        <span>PremiumAudio</span>
+      </div>
+      
+      <div class="controls">
+        <div class="search-wrapper">
+          <span class="material-symbols-rounded">search</span>
+          <input type="text" id="search-input" placeholder="Search songs, artists...">
+        </div>
+        
+        <div class="select-wrapper">
+          <select id="genre-filter">
+            <option value="All">All Genres</option>
+            <option value="Pop">Pop</option>
+            <option value="Rock">Rock</option>
+            <option value="Electronic">Electronic</option>
+            <option value="Jazz">Jazz</option>
+          </select>
+          <span class="material-symbols-rounded">expand_more</span>
+        </div>
+
+        <div class="select-wrapper">
+          <select id="artist-filter">
+            <option value="All">All Artists</option>
+            <option value="M83">M83</option>
+            <option value="Queen">Queen</option>
+            <option value="The Weeknd">The Weeknd</option>
+            <option value="Dave Brubeck">Dave Brubeck</option>
+          </select>
+          <span class="material-symbols-rounded">expand_more</span>
+        </div>
+
+        <div class="select-wrapper">
+          <select id="sort-filter">
+            <option value="id">Sort By</option>
+            <option value="title">Title (A-Z)</option>
+            <option value="artist">Artist (A-Z)</option>
+            <option value="duration">Duration</option>
+            <option value="playCount">Most Played</option>
+          </select>
+          <span class="material-symbols-rounded">expand_more</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="section-header">
+        <h2>My Library</h2>
+        <p class="subtitle">Your personal collection, upgraded.</p>
+      </div>
+      <div id="playlist-grid" class="playlist-grid">
+        <!-- Songs will be injected here by app.js -->
+      </div>
+    </main>
+
+    <footer class="now-playing glass-effect">
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      
+      <div class="player-content">
+        <div class="now-playing-info">
+          <div class="now-playing-cover" id="now-playing-cover">
+            <span class="material-symbols-rounded">music_note</span>
+          </div>
+          <div class="now-playing-text">
+            <h3 id="now-playing-title">No song playing</h3>
+            <p id="now-playing-artist">Select a track to start listening</p>
+          </div>
+          <button class="like-btn" id="like-btn" title="Save to favorites">
+            <span class="material-symbols-rounded">favorite</span>
+          </button>
+        </div>
+
+        <div class="now-playing-controls">
+          <button class="control-btn" title="Previous">
+            <span class="material-symbols-rounded">skip_previous</span>
+          </button>
+          <button class="play-btn" id="play-pause-btn" title="Play">
+            <span class="material-symbols-rounded play-icon">play_arrow</span>
+          </button>
+          <button class="control-btn" title="Next">
+            <span class="material-symbols-rounded">skip_next</span>
+          </button>
+        </div>
+
+        <div class="now-playing-extras">
+          <span class="time-current" id="time-current">0:00</span>
+          <span class="time-separator">/</span>
+          <span class="time-total" id="time-total">0:00</span>
+          <button class="control-btn volume-btn">
+            <span class="material-symbols-rounded">volume_up</span>
+          </button>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="dist/app.js"></script>
+</body>
+</html>
